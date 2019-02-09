@@ -36,20 +36,21 @@
 
 	$conn = DbConfig::getInstance();
 
-	//dohvati sve podatke o igracu
+	//get player data
 	$query = "SELECT * FROM player";
 	$stmt = $conn->prepare($query);	
 	$result = $stmt->execute();
 	$result = $stmt->fetchAll();	
 
-	//dohvati sve o inventoriy i items
-	/*$query2="SELECT player_inventory.ammount,'items.title','items.details'
+	//failed query -.-
+	/*$query2="SELECT player_inventory.ammount,'items.title','items.details' 
 			FROM ((player_inventory
 			INNER JOIN player ON player_inventory.play_id = player.player_id)
 			INNER JOIN player_inventory pi2 ON items.id=player_inventory.inv_id)
 			WHERE ((player_inventory.play_id = player.player_id)
 			player_inventory.it_id=items.id)";*/
 
+	//get inventory and items data
 	$query2 ="SELECT player_inventory.ammount, items.title,items.details,items.id, player_inventory.play_id
 			FROM player_inventory
 			INNER JOIN items ON player_inventory.it_id=items.id
@@ -69,72 +70,69 @@
 	$result3 = $stmt3->fetchAll();
 
 
-	//ispisi  o igracu
+	//player data table
 
 	echo "<table class='table table-striped' style='margin: 0 auto; width:750px;'>";
-	echo "<thead>";	
-	echo"<caption>PLAYER</caption>";
-	echo "<tr>";
-	echo "<td>Name</td>";
-	echo "<td>HP</td>";
-	echo "<td>STR</td>";
-	echo "<td>XP</td>";
-	echo "<td>ENERGIE</td>";
-	echo "<td>LV</td>";
-	echo "<td>Exp to LV-up</td>";
-	echo "</tr>";
-	echo "</thead>";
+		echo "<thead>";	
+			echo"<caption>PLAYER</caption>";
+				echo "<tr>";
+					echo "<td>Name</td>";
+					echo "<td>HP</td>";
+					echo "<td>STR</td>";
+					echo "<td>XP</td>";
+					echo "<td>ENERGIE</td>";
+					echo "<td>LV</td>";
+					echo "<td>Exp to LV-up</td>";
+				echo "</tr>";
+		echo "</thead>";
+
 	foreach ($result as $player) {		
 			
 		//echo "<img src='../image/".$movie['picture']."' />";
 		echo"<tbody>";
-		echo"<tr>";
-		echo "<td>{$player['player_name']}</td>";
-		echo "<td>{$player['player_hp']}</td>";
-		echo "<td>{$player['player_str']}</td>";
-		echo "<td>{$player['player_exp']}</td>";
-		echo "<td>{$player['player_energie']}</td>";
-		echo "<td>{$player['player_lvl']}</td>";
-		echo "<td>{$player['xp_need']}</td>";
-		echo"</tr>";
+			echo"<tr>";
+				echo "<td>{$player['player_name']}</td>";
+				echo "<td>{$player['player_hp']}</td>";
+				echo "<td>{$player['player_str']}</td>";
+				echo "<td>{$player['player_exp']}</td>";
+				echo "<td>{$player['player_energie']}</td>";
+				echo "<td>{$player['player_lvl']}</td>";
+				echo "<td>{$player['xp_need']}</td>";
+			echo"</tr>";
 		echo"</tbody>";		
 	}
 	echo"</table>";
 	echo"<br>";
 
 
-	//ispisi inventory
+	//invenotry data table
 
 	echo "<table class='table table-striped' style='margin: 0 auto; width:750px;'>";
-	echo "<thead>";	
-	echo"<caption>INVENTORY</caption>";
-	echo "<tr>";
-	echo "<td>Title</td>";
-	echo "<td>Details</td>";
-	echo "<td>Ammount</td>";	
-	echo "</tr>";
-	echo "</thead>";	
+		echo "<thead>";	
+			echo"<caption>INVENTORY</caption>";
+				echo "<tr>";
+					echo "<td>Title</td>";
+					echo "<td>Details</td>";
+					echo "<td>Ammount</td>";	
+				echo "</tr>";
+		echo "</thead>";	
 
 	foreach ($result2 as $inv) {
 		foreach ($result3 as $inv2) {
-			if ($inv2['player_id']==$inv['play_id']&& $inv2['it_id']==$inv['id'])
-				{
+			if ($inv2['player_id']==$inv['play_id']&& $inv2['it_id']==$inv['id']){
 				//echo "<img src='../image/".$movie['picture']."' />";
 				echo"<tbody>";
-				echo"<tr>";
-				echo "<td>{$inv['title']}</td>";
-				echo "<td>{$inv['details']}</td>";
-				echo "<td>{$inv['ammount']}</td>";		
-				echo"</tr>";
+					echo"<tr>";
+						echo "<td>{$inv['title']}</td>";
+						echo "<td>{$inv['details']}</td>";
+						echo "<td>{$inv['ammount']}</td>";		
+					echo"</tr>";
 				echo"</tbody>";	
 			}
 		}				
 	}
 	echo"</table>";
 
-
 	/////http://localhost/šibanje/php/player.php
-	
-
 ?>
 
