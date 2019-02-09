@@ -4,7 +4,7 @@ class DbConfig {
   public static function getInstance() {
     if(self::$instance == null) {
       try {
-     self::$instance = new PDO("mysql:host=localhost;dbname=mmorts",
+     self::$instance = new PDO("mysql:host=localhost;dbname=webrpg",
       'root','');
       } catch (PDOException $e) {
         die("Error while connecting to database!");

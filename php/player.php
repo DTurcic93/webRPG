@@ -133,7 +133,7 @@
 	echo"</table>";
 
 
-	/////http://localhost/TESTMMORTS/php/player.php
+	/////http://localhost/šibanje/php/player.php
 	
 
 ?>

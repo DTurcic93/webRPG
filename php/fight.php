@@ -175,7 +175,7 @@
 
 			//PLAYER WON
  		if ($enemyHp<=0) { 
- 			$con = mysqli_connect('localhost', 'root', '', 'mmorts');			
+ 			$con = mysqli_connect('localhost', 'root', '', 'webrpg');			
  			$EXPgain=$enemyLvl*10;
  			$GoldGain=$enemyLvl*20;
  			$playerExp=$playerExp+$EXPgain;
@@ -199,7 +199,7 @@
  			//LV-UP
  			if (($playerExp == $playerXpNeed)||($playerExp > $playerXpNeed)) {
  				
- 				$con = mysqli_connect('localhost', 'root', '', 'mmorts');
+ 				$con = mysqli_connect('localhost', 'root', '', 'webrpg');
  				$playerExp=0;
  				$playerStr=$playerStr+2;
  				$playerLvl=$playerLvl+1;
