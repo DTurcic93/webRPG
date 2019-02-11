@@ -74,4 +74,13 @@ content(
 				...
 		)
 	)
+	later will add 
+		merchant ( player will be able to buy items for gold)
+		equipable items
+		enemies will drop random items (item lv will be same as enemy lv)
+		login/registration
+		pvp ( if  player win he/she will be rewarded with  glory( currency for purchasing special items)
+		pvp leaderboard
+		and much more...
+	
 )

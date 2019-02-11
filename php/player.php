@@ -15,7 +15,7 @@
 	    	<ul class="nav navbar-nav">
 	      		<li class="active"><a href="player.php">Character</a></li>
 	      		<li><a href="enemy.php">Enemies</a></li>
-	      		<li><a href="tasks.php  ?>">Tasks</a></li>
+	      		<li><a href="tasks.php">Tasks</a></li>
 	      		<li><a href="#">Fight</a></li>
 	      		<li><a href="merch.php  ?>">Store</a></li>
 	    	</ul>
