@@ -26,6 +26,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>
 
@@ -76,12 +77,14 @@
 					echo "<td>{$task['reward_gold']}</td>";
 					echo "<td>{$task['reward_exp']}</td>";
 					echo "<td>{$task['task_time']}</td>";
-					echo"<td><a href='dotask.php?taskName={$taskTitle}&taskDetails={$taskDetails}&taskGold={$taskGold}&taskExp={$taskExp}&taskTime={$taskTime}'class='btn btn-primary' class='btn btn-primary'>Work!</td>";		
+					echo"<td><a href='dotask.php?taskName={$task['task_title']}&taskDetails={$task['task_details']}&taskGold={$task['reward_gold']}&taskExp={$task['reward_exp']}&taskTime={$task['task_time']}'class='btn btn-primary'>Work!</td>";		
 				echo"</tr>";
 			echo"</tbody>";		
 	}
 		echo"</table>";
 
+
+		
 	//--------------------task complete--------------------------------------------------
 		//code ...
  ?>

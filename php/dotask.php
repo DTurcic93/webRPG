@@ -4,7 +4,7 @@
 	<title>šibanje</title>	
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	
+
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -23,10 +23,12 @@
 	</nav>
 
 
+
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>
 
@@ -38,7 +40,6 @@
 	 $TaskGold = $_GET['taskGold'];
 	 $TaskExp = $_GET['taskExp'];
 	 $TaskTime = $_GET['taskTime'];
-
 
 	require_once ("../database/DbConfig.php");
 	$conn = DbConfig::getInstance();
@@ -76,6 +77,9 @@
  	$itID = $inv['it_id'];
  	$Ammount = $inv['ammount']; 	
 }
+		
+	
+
 
 
 
@@ -100,4 +104,6 @@
 				echo"</tr>";
 			echo"</tbody>";			
 		echo"</table>";
+
+		
 ?>

@@ -4,27 +4,7 @@
 	<title>šibanje</title>	
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<style>
-.dropdown {
-  position:relative; margin:0px 750px auto;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;  
-  position:relative; margin:0px auto;
-  background-color: #f9f9f9;
-  min-width: 750px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  position:relative; margin:0px -350px auto;
-}
-</style>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	
 </head>
 <body>
@@ -178,6 +158,7 @@
 						//PLAYER WON
 			 			if ($enemyHp<=0) { 
 				 			$con = mysqli_connect('localhost', 'root', '', 'webrpg');
+				 			
 
 				 			$EXPgain=$enemyLvl*10;
 				 			$GoldGain=$enemyLvl*20;
