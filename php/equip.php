@@ -19,6 +19,10 @@
 
 
 
+	
+
+
+
 	header ('Location: player.php');
 
 	?>
